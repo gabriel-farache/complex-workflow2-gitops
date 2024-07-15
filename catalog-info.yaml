@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: complex.workflow2-gitops
+  description: complex-workflow2
+  annotations:
+    argocd/app-name: complex.workflow2-gitops
+    backstage.io/kubernetes-label-selector: 'app=complex.workflow2,sonataflow.org/workflow-app=complex.workflow2'
+    backstage.io/kubernetes-namespace: sonataflow-infra
+    backstage.io/kubernetes-id: complex.workflow2
+    github.com/project-slug: gabriel-farache/complex-workflow2-gitops
+spec:
+  type: workflow-project
+  system: system:default/janus-orchestrator
+  lifecycle: development
+  owner: user:guest
+  dependsOn:
+    - component:complex.workflow2
